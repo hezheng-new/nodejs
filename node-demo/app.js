@@ -24,9 +24,12 @@ app.set('view engine','html');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+//json 传参解析
 app.use(bodyParser.json());
+//post 方法传参解析
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(app.router);
 //静态文件加载路径
 app.use(express.static(path.join(__dirname, 'public')));
 
